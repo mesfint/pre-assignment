@@ -5,7 +5,7 @@ import UserInfoCard from "./components/UserInfoCard";
 import UserDetails from "./components/UserDetails";
 import "./App.css";
 
-const fetchRandomData = () => {
+const fetchData = () => {
   return axios
     .get("https://jsonplaceholder.typicode.com/users")
 
@@ -27,7 +27,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetchRandomData().then((data) => {
+    fetchData().then((data) => {
       setUserInfos(data);
       setIsLoading(true);
     });
