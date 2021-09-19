@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios";
+import UserInfoCard from "./components/UserInfoCard";
+import UserDetails from "./components/UserDetails";
+import "./App.css";
 
-function App() {
+const fetchRandomData = () => {
+  return axios
+    .get("https://jsonplaceholder.typicode.com/users")
+
+    .then(({ data }) => {
+      // handle success
+      console.log(data);
+
+      return data;
+    })
+
+    .catch((error) => {
+      // handle error
+
+      console.log(error);
+    });
+};
+const App = () => {
+  const [userInfos, setUserInfos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    fetchRandomData().then((data) => {
+      setUserInfos(data);
+      setIsLoading(true);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/">
+        <UserInfoCard userInfos={userInfos} isLoading={isLoading} />
+      </Route>
+      <Route path="/users/:username">
+        <UserDetails userInfos={userInfos} isLoading={isLoading} />
+      </Route>
+    </Router>
   );
-}
-
+};
 export default App;

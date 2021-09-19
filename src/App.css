@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+/*General styling rule*/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Set body defaults */
+body {
+  line-height: 1.5;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
 
-.App-header {
-  background-color: #282c34;
+  /* center demo content on the screen */
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*App Style*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* background-image: url(./imgs/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #50a4c2; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  width: 60%;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 220px;
+  height: 230px;
+  margin: 5px 10px;
+  /* text-align: left; */
+  line-height: 1.5;
+  color: rgb(75, 71, 71);
+  -webkit-box-shadow: 0px 21px 46px -15px black;
+  -moz-box-shadow: 0px 21px 46px -15px black;
+  box-shadow: 0px 11px 26px -15px black;
+  border-radius: 6px;
+  background: white;
+}
+.firstLetter {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background: #bdbbbb;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.more-details,
+.back-to-home-btn {
+  background: #0f8dba;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  line-height: 0.5;
+  border-radius: 6px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+.more-details:hover {
+  background: #bdbbbb;
+  color: #000;
+}
+.website {
+  text-decoration: none;
+  color: #0f8dba;
+}
+.attribution {
+  font-size: 0.7em;
+  margin-right: 15px;
+  text-align: center;
+}
+.attribution a {
+  color: rgb(28, 28, 82);
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+/* userInfoCard style */
+.container-detail {
+  display: flex;
+  flex-direction: column;
+}
+.userInfoCard {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: center;
+  align-items: left;
+  margin-bottom: 50px;
+}
+
+.back-to-home-btn:hover {
+  background: #bdbbbb;
+  color: #000;
+}
+
+.site-card-border-less-wrapper {
+  padding: 10px;
+  background: #ececec;
+  border-radius: 6px;
 }
