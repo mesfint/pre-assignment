@@ -9,32 +9,36 @@
 
 ## Features
 
-1.  ### Add/Remove Books
+1.  ### Fetch data from remore API 
 
-    - Books can be added  with Title , author ,pages number and read status
-    -Reading Status can be changed from unread to read 
+    -  Fetch User's Information from an API 
+    -   And display that data on the browser
     
 
 # Technologies Used
 
-- HTML
-- CSS
-- JS, DOM Manipulation
+-   💊 Use Functional React component.
+-   💊 useState
+-   💊 useEffect
+-   💊 useParams
+
 
 # Development
 
 -   Visual Studio
--   Vanila JS
+-   ReactJS
 
  ### To run the project on local machine
 
 ```
-Clone the project into your local machine
+Clone the project repo into your local machine
+
+npm install
 
 ```
 
 
 # Building & Deployment
 
-- `The project is deployed on netlify, [BookLibrary](https://booklibraryjs.netlify.app/)
+- `The project is deployed on netlify, [Pre-assignment](https://pre-assignment.netlify.app)
 
